@@ -5,9 +5,205 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.latest-booking {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e8f5e9;
+  border-left: 5px solid green;
+  border-radius: 6px;
+}
+
+/* ===============================
+   ADVANCED STYLING (Modern UI)
+   Transport Booking System (React)
+   =============================== */
+
+/* CSS VARIABLES */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url(https://www.shutterstock.com/image-vector/bus-ticket-online-pay-smart-600nw-2598472987.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  color: var(--text);
+}
+
+/* ===============================
+   LAYOUT (DESKTOP DEFAULT)
+   =============================== */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+}
+
+/* ===============================
+   CARD STYLE
+   =============================== */
+.booking-form,
+.summary-box,
+.history-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-form:hover,
+.summary-box:hover,
+.history-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   FORM ELEMENTS
+   =============================== */
+.booking-form {
+  display: grid;
+  gap: 14px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 15px;
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+button {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+button[type="button"] {
+  background: #e5e7eb;
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, var(--danger), #b91c1c);
+  color: white;
+}
+
+/* ===============================
+   SUCCESS POPUP
+   =============================== */
+.success-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--success), #16a34a);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 14px;
+}
+
+/* ===============================
+   RESPONSIVE BREAKPOINTS
+   =============================== */
+
+/* 📱 MOBILE (max-width: 600px) */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: 20px auto;
+    padding: 12px;
+  }
+
+  .booking-form,
+  .summary-box,
+  .history-card {
+    padding: 18px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .success-popup {
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+}
+
+/* 📲 TABLET (601px – 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* 💻 LAPTOP (901px – 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) translateX(20px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
